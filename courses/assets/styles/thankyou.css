@@ -1,0 +1,111 @@
+.woocommerce-order-received .woocommerce .woocommerce-thankyou-order-received {
+    margin-top: 20px;
+}
+
+.woocommerce table.shop_table td.product-name.service-item {
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.woocommerce-table__product-name.product-name.service-item::before {
+    content: "- ";
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.woocommerce table.shop_table td.product-name a {
+    font-weight: bold;
+    color: black;
+}
+
+.woocommerce table.shop_table td.product-name > .product-quantity {
+    font-weight: bold;
+}
+
+.woocommerce table.shop_table td.service-item > .product-quantity {
+    font-weight: normal !important;
+}
+
+.woocommerce table.shop_table td.service-item > .product-quantity {
+    font-weight: normal !important;
+}
+.woocommerce table.shop_table td.woocommerce-table__product-total ,
+.woocommerce table.shop_table tfoot td.details-total  {
+    text-align: right;
+
+}
+.woocommerce table.shop_table tfoot tr:last-child td.details-total {
+    text-align: right;
+}
+
+/*.entry-title{*/
+/*    display:none;*/
+/*}*/
+
+
+@media (max-width: 900px) {
+    .woocommerce ul.order_details li {
+        margin-bottom: 20px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .woocommerce-order-received .woocommerce .woocommerce-thankyou-order-received {
+        font-size: 15px;
+    }
+
+    .woocommerce ul.order_details li {
+        margin-bottom: 20px !important;
+    }
+
+    .woocommerce ul.order_details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .woocommerce-table__product-name.product-name.service-item::before {
+        content: "- ";
+        font-weight: bold;
+        padding-left: 15px;
+
+    }
+
+    .woocommerce table.shop_table td.product-name.service-item {
+        padding-left: 20px;
+    }
+
+    .woocommerce-table__product-name.product-name.service-item {
+        text-indent: -23px;
+    }
+
+    .woocommerce ul.order_details li {
+        border-right: none !important;
+    }
+
+    .woocommerce table.shop_table td.product-name a {
+        font-weight: bold;
+        color: black;
+    }
+
+    .woocommerce table.shop_table td.product-name > .product-quantity {
+        font-weight: bold;
+    }
+
+    .woocommerce table.shop_table td.service-item > .product-quantity {
+        font-weight: normal !important;
+    }
+
+    .woocommerce-order-overview.woocommerce-thankyou-order-details.order_details {
+        margin-bottom: 0;
+    }
+
+    /*.woocommerce table.shop_table td.woocommerce-table__product-total{*/
+    /*    font-weight:bold;*/
+    /*}*/
+
+}
+
+.woocommerce table.shop_table tfoot tr:first-child td.details-total {
+    display: flex;
+    flex-direction: column;
+}

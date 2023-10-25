@@ -1,0 +1,14 @@
+
+.empty-cart-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 500px) {
+    .empty-cart-button {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+}

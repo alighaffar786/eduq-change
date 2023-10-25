@@ -1,0 +1,1559 @@
+﻿
+﻿/*
+    Common 
+*/
+
+.wizard,
+.tabcontrol {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.wizard a,
+.tabcontrol a {
+    outline: 0;
+}
+
+.wizard ul,
+.tabcontrol ul {
+    list-style: none !important;
+    padding: 0;
+    margin: 0;
+}
+
+.wizard ul > li,
+.tabcontrol ul > li {
+    display: block;
+    padding: 0;
+}
+
+/* Accessibility */
+.wizard > .steps .current-info,
+.tabcontrol > .steps .current-info {
+    position: absolute;
+    left: -999em;
+}
+
+.wizard > .content > .title,
+.tabcontrol > .content > .title {
+    position: absolute;
+    left: -999em;
+}
+
+
+/*
+    Wizard
+*/
+
+.wizard > .steps {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.wizard.vertical > .steps {
+    display: inline;
+    float: left;
+    width: 30%;
+}
+
+.wizard > .steps .number {
+    font-size: 1.429em;
+}
+
+.wizard > .steps > ul > li {
+    width: 25%;
+}
+
+.wizard > .steps > ul > li,
+.wizard > .actions > ul > li {
+    float: left;
+}
+
+.wizard.vertical > .steps > ul > li {
+    float: none;
+    width: 100%;
+}
+
+.wizard > .steps a,
+.wizard > .steps a:hover,
+.wizard > .steps a:active {
+    display: block;
+    width: auto;
+    margin: 0 0.5em 0.5em;
+    padding: 1em 1em;
+    text-decoration: none;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.wizard > .steps .disabled a,
+.wizard > .steps .disabled a:hover,
+.wizard > .steps .disabled a:active {
+    background: #eee;
+    color: #aaa;
+    cursor: default;
+}
+
+.wizard > .steps .current a,
+.wizard > .steps .current a:hover,
+.wizard > .steps .current a:active {
+    background: #2184be;
+    color: #fff;
+    cursor: default;
+}
+
+.wizard > .steps .done a,
+.wizard > .steps .done a:hover,
+.wizard > .steps .done a:active {
+    background: #9dc8e2;
+    color: #fff;
+}
+
+.wizard > .steps .error a,
+.wizard > .steps .error a:hover,
+.wizard > .steps .error a:active {
+    background: #ff3111;
+    color: #fff;
+}
+
+.wizard > .content {
+    background: #eee;
+    display: block;
+    margin: 0.5em;
+    min-height: 35em;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.wizard.vertical > .content {
+    display: inline;
+    float: left;
+    margin: 0 2.5% 0.5em 2.5%;
+    width: 65%;
+}
+
+.wizard > .content > .body {
+    float: left;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    padding: 2.5%;
+}
+
+.wizard > .content > .body ul {
+    list-style: disc !important;
+}
+
+.wizard > .content > .body ul > li {
+    display: list-item;
+}
+
+.wizard > .content > .body > iframe {
+    border: 0 none;
+    width: 100%;
+    height: 100%;
+}
+
+.wizard > .content > .body input {
+    display: block;
+    border: 1px solid #ccc;
+}
+
+.wizard > .content > .body input[type="checkbox"] {
+    display: inline-block;
+}
+
+.wizard > .content > .body input.error {
+    background: rgb(251, 227, 228);
+    border: 1px solid #fbc2c4;
+    color: #8a1f11;
+}
+
+.wizard > .content > .body label {
+    display: inline-block;
+    margin-bottom: 0.5em;
+}
+
+.wizard > .content > .body label.error {
+    color: #8a1f11;
+    display: inline-block;
+    margin-left: 1.5em;
+}
+
+.wizard > .actions {
+    position: relative;
+    display: block;
+    text-align: right;
+    width: 100%;
+}
+
+.wizard.vertical > .actions {
+    display: inline;
+    float: right;
+    margin: 0 2.5%;
+    width: 95%;
+}
+
+.wizard > .actions > ul {
+    display: inline-block;
+    text-align: right;
+}
+
+.wizard > .actions > ul > li {
+    margin: 0 0.5em;
+}
+
+.wizard.vertical > .actions > ul > li {
+    margin: 0 0 0 1em;
+}
+
+.wizard > .actions a,
+.wizard > .actions a:hover,
+.wizard > .actions a:active {
+    background: #2184be;
+    color: #fff;
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.wizard > .actions .disabled a,
+.wizard > .actions .disabled a:hover,
+.wizard > .actions .disabled a:active {
+    background: #eee;
+    color: #aaa;
+}
+
+.wizard > .loading {
+}
+
+.wizard > .loading .spinner {
+}
+
+
+/*
+    Tabcontrol
+*/
+
+.tabcontrol > .steps {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.tabcontrol > .steps > ul {
+    position: relative;
+    margin: 6px 0 0 0;
+    top: 1px;
+    z-index: 1;
+}
+
+.tabcontrol > .steps > ul > li {
+    float: left;
+    margin: 5px 2px 0 0;
+    padding: 1px;
+
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.tabcontrol > .steps > ul > li:hover {
+    background: #edecec;
+    border: 1px solid #bbb;
+    padding: 0;
+}
+
+.tabcontrol > .steps > ul > li.current {
+    background: #fff;
+    border: 1px solid #bbb;
+    border-bottom: 0 none;
+    padding: 0 0 1px 0;
+    margin-top: 0;
+}
+
+.tabcontrol > .steps > ul > li > a {
+    color: #5f5f5f;
+    display: inline-block;
+    border: 0 none;
+    margin: 0;
+    padding: 10px 30px;
+    text-decoration: none;
+}
+
+.tabcontrol > .steps > ul > li > a:hover {
+    text-decoration: none;
+}
+
+.tabcontrol > .steps > ul > li.current > a {
+    padding: 15px 30px 10px 30px;
+}
+
+.tabcontrol > .content {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 35em;
+    overflow: hidden;
+    border-top: 1px solid #bbb;
+    padding-top: 20px;
+}
+
+.tabcontrol > .content > .body {
+    float: left;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    padding: 2.5%;
+}
+
+.tabcontrol > .content > .body ul {
+    list-style: disc !important;
+}
+
+.tabcontrol > .content > .body ul > li {
+    display: list-item;
+}
+
+/*pre loader*/
+.preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: rgb(23, 22, 22);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transition: opacity 0.3s linear;
+}
+
+/*bugfixes-05-03-2022*/
+.calendar_sect_main {
+    margin-bottom: 30px !important;
+    padding: 0 15px;
+}
+
+.calendar_sect_main > .row {
+    background-color: #fff !important;
+}
+
+.calendar_sect_main .calendar_left_sect {
+    border: 1px solid #0091d6;
+}
+
+.calendar_sect_main .course_detail {
+    background-color: #fff !important;
+    display: flex;
+}
+
+.calendar_sect_main .course_detail .course_unavailable_text {
+    /*text-align: center;*/
+    vertical-align: middle;
+    border: 1px solid #0091d6;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+}
+
+.calendar_sect_main .course_detail .course_unavailable_text p {
+    font-size: 21px;
+    line-height: 32px;
+    text-align: center;
+    color: #f57d30;
+    /*box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;*/
+    /*padding: 15px;*/
+    border-radius: 5px;
+    padding: 30px 30px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    margin: 0 !important;
+}
+
+.to_show {
+    color: #f57d30 !important;
+}
+
+.calendar_sect_main .calendar_right_sect {
+    background: #0091d6;
+}
+
+.calendar_sect_main .calendar_right_sect > .row {
+    /*padding: 0 20px !important;*/
+    background: #0091d6;
+}
+
+.calendar_sect_main .calendar_right_sect > .row:last-child {
+    padding-top: 26px !important;
+}
+
+.team-member {
+    position: static !important;
+    transform: translate(0, 0) !important;
+}
+
+.calendar_sect_main .calendar-container .calendar {
+    padding: 5.5px 0;
+}
+
+.calendar_sect_main .calendar-container .calendar .day {
+    width: 2em !important;
+    height: 2em !important;
+    line-height: 2em !important;
+    font-size: 14px !important;
+}
+
+
+.calendar_sect_main .calendar-container .calendar .day.today.disabled {
+    border: 2px solid #B2BEB5;
+}
+
+.calendar_sect_main .calendar-container .calendar .day.has-event:hover {
+    background-color: #5ac777;
+}
+
+.calendar_sect_main .calendar-container .calendar .day.has-event {
+    border: 2px solid #5ac777;
+}
+
+.calendar_sect_main .calendar-container .calendar .day.fully-booked:hover {
+    background-color: #f57d30;
+}
+
+.calendar_sect_main .calendar-container .calendar .day.fully-booked {
+    border: 2px solid #f57d30;
+}
+
+.calendar_sect_main .calendar-container .calendar .day.has-event.past-date:after {
+    display: none;
+}
+
+.calendar_sect_main .calendar-container .calendar .day.has-event.past-date:hover:after {
+    dispaly: none;
+}
+
+.calendar_sect_main .calendar-container .calendar .day.has-event.past-date:hover {
+    border: none;
+}
+
+.table-condensed > thead > tr > th {
+    text-transform: capitalize;
+}
+
+.calendar_sect_main .calendar-container .calendar .day.disabled {
+    color: inherit;
+}
+
+.calendar_sect_main .calendar-container .calendar .day.disabled:hover {
+    color: inherit;
+}
+
+
+.calendar_sect_main .calendar-container .calendar header .month {
+    line-height: 1.4;
+}
+
+.calendar_sect_main .calendar-container .calendar table {
+    margin: 0 0 0 0;
+}
+
+.calendar_sect_main .calendar-container .calendar table td {
+    padding: 0.4em 0.1em;
+    border: none;
+}
+
+.calendar_sect_main .calendar-container .calendar .event-container .close {
+    top: 10px!important;
+    right: 5%!important;
+}
+
+.calendar_sect_main .calendar-container .calendar .event-container {
+    padding: 10px 0!important;
+}
+
+
+/*.bootstrap-datetimepicker-widget table td.day.past {*/
+/*    border-bottom: none !important;*/
+/*}*/
+
+#event-loader {
+    display: none;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    margin: auto;
+}
+
+/*optional courses*/
+.optional_courses .checkbox input[type=checkbox] {
+    margin-top: 6px;
+}
+
+#optional_course {
+    margin-left: 22px;
+}
+
+
+/*No events*/
+#no_events {
+    font-size: 21px;
+    line-height: 32px;
+    text-align: center;
+    color: #f57d30;
+    /* box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px; */
+    /* padding: 15px; */
+    border-radius: 5px;
+    padding: 30px 30px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    margin: 0 !important;
+}
+
+#no_event {
+    font-size: 21px;
+    line-height: 32px;
+    text-align: center;
+    color: #f57d30;
+    /* box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px; */
+    /* padding: 15px; */
+    border-radius: 5px;
+    padding: 30px 30px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    margin-bottom: 20px !important;
+    width: 100%;
+
+}
+
+#courseFullyBookedMsg{
+    font-size: 21px;
+    line-height: 32px;
+    text-align: center;
+    color: #f57d30;
+    border-radius: 5px;
+    padding: 30px 30px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    margin-bottom: 20px !important;
+    width: 100%;
+}
+
+/*form*/
+#form_subscription label.vc_col-sm-3 {
+    display: none !important;
+}
+
+#course ~ span.select2-container--default{
+    width:100% !important;
+}
+
+.sidebar-title h5 {
+    font-size: 15px;
+}
+
+#submit_subscription_btn {
+    float: right;
+}
+
+div.submit_btn_for_mobile {
+    display: none;
+}
+
+div.sidebar_btn_row .btn:hover {
+    color: #e0e0e6;
+}
+
+.woocommerce-mini-cart__total bdi {
+    float: right;
+}
+
+.woocommerce .widget_shopping_cart_content .buttons {
+    height: 55px;
+    display: flex;
+    text-align: center;
+}
+
+.woocommerce .widget_shopping_cart_content .buttons a.checkout {
+    padding-top: 15px;
+}
+
+div.coupon{
+    display: none !important;
+}
+
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@media (min-width: 1281px) {
+    /*div.panel-body div.form-group select.form-control {*/
+    /*    width:60%;*/
+    /*}*/
+}
+
+div.cursist {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.entry-header {
+    display: none;
+}
+
+div#step_bar, ul.breadcrumb, ul.vc_tta-tabs-list {
+    font-family: Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 26px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#step_bar .line {
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    width: 100%;
+    left: 15px;
+    position: relative;
+}
+
+#step_bar .stepText1 {
+    text-align: left;
+    left: -25px;
+}
+
+#step_bar .stepText2 {
+    text-align: center;
+}
+
+#step_bar .stepText3 {
+    text-align: right;
+    right: -53px !important;
+}
+
+#step_bar .stepText4 {
+    text-align: right;
+    right: -35px;
+}
+
+#step_bar .step {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    background: white;
+    border-radius: 100px;
+    margin-top: 30px;
+    transition: 0.4s;
+}
+
+#step_bar .step1 {
+    margin-top: -10px;
+    float: left;
+}
+
+#step_bar .step2 {
+    margin: 0 auto;
+    margin-top: -10px;
+}
+
+#step_bar .step3 {
+    float: right;
+    margin-top: -10px;
+}
+
+#step_bar .step4 {
+    float: right;
+    margin-top: -10px;
+}
+
+#step_bar .active {
+    background: black;
+}
+
+.col-md-6.field_offset_0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.col-md-9.field_offset_0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.col-sm-9.field_offset_0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.col-sm-12.field_offset_0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.col-md-2.field_offset_0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.col-md-10.field_offset_0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.col-lg-12.field_offset_0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.input-group.date {
+    height: 28px;
+}
+
+
+.col-sm-3.field_offset_0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row.top-5 {
+    margin-top: 5px;
+}
+
+.row.top-10 {
+    margin-top: 10px;
+}
+
+.panel .panel-heading {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.control-label span {
+    color: red;
+}
+
+div.input-group.date span.input-group-addon {
+    padding: 0 12px !important;
+    border-left: 1px solid #ccc;
+    border-radius: 0;
+}
+
+.woocommerce-cart #primary .cart .button.redirect-btn {
+    width: 27%;
+    text-align: center;
+}
+
+.woocommerce-cart #primary .cart .button.redirect-btn2 {
+    width: 27%;
+    text-align: center;
+    display: none;
+}
+
+p.red {
+    color: red;
+}
+
+a.lp_remove_student, a.lp_remove_student:link {
+    color: #dc3545;
+}
+
+a.lp_clear_student_fields, a.lp_clear_student_fields:link {
+    color: #dc3545;
+}
+
+a.lp_remove_student:hover, a.lp_remove_student:focus, a.lp_remove_student:visited {
+    color: #b02a37;
+}
+
+a.lp_add_student {
+    cursor: pointer;
+}
+
+.col-md-3.col-sm-3.col-lg-3.col-no-margin-right {
+    padding-right: 0px;
+}
+
+.col-md-3.col-sm-3.col-lg-3.col-no-margin-right button.btn-block,
+.col-sm-3 button.lp_remove_student.btn-block {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.col-sm-3 button.lp_remove_student.btn-block {
+    font-size: 12px;
+}
+
+div.vc_row-fluid.rowform .help-block {
+    margin-top: 0;
+    color: #ccc;
+}
+
+.eduq_tooltip {
+    font-size: 15px;
+}
+
+
+.woocommerce table.shop_table td.product-name.service-item {
+    padding-left: 40px;
+    font-size: 14px;
+}
+
+.woocommerce table.cart.shop_table td.product-name.service-item {
+    padding-left: 25px;
+}
+
+.woocommerce table.shop_table td.product-name.service-item:before {
+    content: "- ";
+    font-weight: bold;
+}
+
+#order_review table.shop_table td.product-name.service-item {
+    padding-left: 40px;
+    font-size: 14px;
+}
+
+#order_review table.shop_table td.product-name.service-item:before {
+    content: "- ";
+    font-weight: bold;
+}
+
+span#cart_total bdi {
+    font-weight: bold;
+}
+
+small.tax_label, span.tax_label, span.cart_tax {
+    color: #767676;
+}
+
+small.tax_label, span#cart_tax {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+div#cart_extra_price_label {
+    padding-left: 15px;
+}
+
+div.col-md-6.course_label, div.total_label.col-md-6 {
+    padding-left: 0;
+}
+
+#add_payment_method #payment div.form-row, .woocommerce-cart #payment div.form-row, .woocommerce-checkout #payment div.form-row {
+    padding-left: 36px !important;
+}
+@media (max-width: 1200px){
+    .bigsacreen-error{
+        display: none !important;
+    }
+}
+@media (max-width: 767px) {
+    .calendar_sect_main .calendar_right_sect > .row > .col-sm-4.calendar_right_sect_border {
+        border-left: 0 !important;
+        /*display:none !important;*/
+    }
+    /*.calendar_sect_main .calendar_right_sect {*/
+    /*    padding-top: 15px !important;*/
+    /*    padding-bottom: 15px !important;*/
+    /*}*/
+    /*.calendar_sect_main .calendar_right_sect h4 {*/
+    /*    font-size: 19px !important;*/
+    /*    line-height: 5px!important;*/
+    /*}*/
+    /*.calendar_sect_main .calendar_right_sect p#course_location {*/
+    /*    line-height: 15px !important;*/
+    /*}*/
+    /*.calendar_sect_main .calendar_right_sect p {*/
+    /*    font-size: 15px !important;*/
+    /*    font-weight: 300;*/
+    /*    line-height: 10px;*/
+    /*    margin-top: 15px;*/
+    /*}*/
+    /*#order_review  .checkout_coupon{*/
+    /*    align-items: center;*/
+    /*    display: flex !important;*/
+    /*    margin-bottom: 10px;*/
+    /*}*/
+    .woocommerce form .form-row .input-text, .woocommerce-page form .form-row-first{
+        margin-right: 10px;
+    }
+    
+}
+
+@media screen and (min-width: 500px ) and (max-width: 768px) {
+
+    div#step_bar {
+        font-size: 12px;
+    }
+
+    .course_detail {
+        background-color: #fff !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .woocommerce table.shop_table td.product-name.service-item:before {
+        content: "- ";
+        font-weight: bold;
+    }
+
+    #order_review table.shop_table td.product-name.service-item:before {
+        content: "- ";
+        font-weight: bold;
+    }
+
+    #step_bar .step2 {
+        /*margin: 0 auto;*/
+        margin-top: -10px;
+        margin-left: 15px;
+    }
+
+    #step_bar .step3 {
+        float: right;
+        margin-top: -10px;
+        margin-right: 50px;
+    }
+
+    #step_bar .stepText1 {
+        text-align: left;
+        left: -25px;
+    }
+
+    #step_bar .stepText2 {
+        text-align: center;
+        right: 52px;
+    }
+
+    #step_bar .stepText3 {
+        text-align: right;
+        left: -3px;
+    }
+
+    #step_bar .stepText4 {
+        text-align: right;
+        right: -20px;
+    }
+
+    .vc_column_container {
+        display: flex !important;
+        justify-content: space-between;
+    }
+    
+    
+
+
+    /*.course_detail {*/
+    /*    display: flex;*/
+    /*    flex-direction: column !important;*/
+    /*}*/
+}
+
+/* @media screen and(min-width: 768px) {
+    
+} */
+@media (max-width: 480px) {
+    /*#order_review  .checkout_coupon{*/
+    /*    flex-direction: column;*/
+    /*    margin-bottom: 10px;*/
+    /*}*/
+    .woocommerce form .form-row .input-text, .woocommerce-page form .form-row-first{
+        margin-right: 0;
+        margin-bottom: 5px !important;
+    }
+    .woocommerce form .form-row .input-text, .woocommerce-page form .form-row{
+        width: 100% !important;
+    }
+    .woocommerce form .form-row .input-text, .woocommerce-page form .form-row button{
+        width: 100% !important;
+    }
+
+
+
+    div#step_bar {
+        font-size: 12px;
+    }
+
+    /* .vc_column_container {
+        display: flex !important;
+        justify-content: space-between;
+    } */
+
+    /*.course_detail {*/
+    /*    display: flex;*/
+    /*    flex-direction: column !important;*/
+    /*}*/
+}
+
+@media (max-width: 420px) {
+
+    div#step_bar {
+        font-size: 12px;
+    }
+
+    #step_bar .step2 {
+        /*margin: 0 auto;*/
+        margin-top: -10px;
+        margin-left: 13px;
+    }
+
+    #step_bar .step3 {
+        float: right;
+        margin-top: -10px;
+        margin-right: 12px;
+    }
+
+    #step_bar .stepText1 {
+        text-align: left;
+        left: -25px;
+    }
+
+    #step_bar .stepText2 {
+        text-align: center;
+        right: 28px;
+    }
+
+    #step_bar .stepText3 {
+        text-align: left;
+        left: -3px;
+    }
+
+    #step_bar .stepText4 {
+        text-align: right;
+        right: -20px;
+    }
+
+    .vc_column_container {
+        display: flex !important;
+        justify-content: space-between;
+    }
+
+    /*.course_detail {*/
+    /*    display: flex;*/
+    /*    flex-direction: column !important;*/
+    /*}*/
+    #numrirrjeshtave {
+        border: none;
+    }
+
+    /*   from */
+    #form_subscription .cursist .rowform:first-child .control-label {
+        display: none !important;
+    }
+}
+
+
+@media screen and (min-width: 769px ) and (max-width: 1080px) {
+    #step_bar .stepText1 {
+        text-align: left;
+        left: -25px;
+    }
+
+    #step_bar .stepText2 {
+        text-align: center;
+        right: 3px;
+    }
+
+    #step_bar .stepText3 {
+        text-align: left;
+        left: 86px;
+    }
+
+    #step_bar .stepText4 {
+        text-align: right;
+        right: -28px;
+    }
+}
+
+/*//checkout page*/
+td.product-subtotal span.to_hidden small.tax_label {
+    display: none;
+}
+
+td.product-total span.to_hidden small.tax_label {
+    display: none;
+}
+
+
+.col-md-6.course_label.optional_courses::before {
+    content: "- ";
+    font-weight: bold;
+}
+
+/*.product-name, .product-total, .order-total, .form-group{*/
+/*    font-size: 15px;*/
+/*}*/
+.field_offset_0 {
+    padding-bottom: 5px;
+}
+
+.control-label {
+    padding-top: 10px;
+}
+
+body {
+    font-family: Roboto, sans-serif !important;
+    font-size: 15px !important;
+    line-height: 26px;
+    /*font-weight: 400 !important;*/
+    font-style: normal;
+}
+
+.shop_table .woocommerce-checkout-review-order-table {
+    font-size: 15px;
+}
+
+.radio-inline input[type=radio] {
+    position: relative;
+    margin-top: 4px \9;
+    margin-left: -20px;
+    margin-right: 5px;
+}
+
+.woocommerce form.woocommerce-checkout .form-row {
+    margin-bottom: 0;
+}
+
+.table > tbody > tr > th, .table > tbody > tr > td {
+    font-size: 15px;
+}
+
+.woocommerce label {
+    font-size: 15px;
+}
+
+/*.payment_box {*/
+/*    display: none !important;*/
+/*}*/
+
+.woocommerce form .form-row .input-checkbox {
+    position: relative;
+    left: -22px;
+}
+
+span.woocommerce-terms-and-conditions-checkbox-text {
+    padding-left: 7px;
+    font-size: 14px;
+}
+
+div.woocommerce-terms-and-conditions-wrapper p.form-row.validate-required {
+    float: left;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    div.input-group.date span.input-group-addon {
+        padding: 0 12px !important;
+        border-left: 1px solid #ccc;
+        border-radius: 0;
+    }
+    #course ~ span.select2-container--default{
+        width:100% !important;
+    }
+    .calendar_sect_main .calendar_right_sect h4{
+        font-size: 19px;
+        line-height: 5px!important;
+    }
+    div.student_info div.col-sm-12 {
+        padding-left: 5px !important;
+        padding-right: 5px;
+        padding-bottom: 15px;
+    }
+
+    .calendar_sect_main .course_detail .course_unavailable_text p {
+        font-size: 20px;
+    }
+
+    #submit_subscription_btn {
+        display: none;
+    }
+
+    div.submit_btn_for_mobile {
+        display: block;
+    }
+
+    span.woocommerce-terms-and-conditions-checkbox-text {
+        padding-left: 1px;
+        font-size: 14px;
+    }
+
+    div.woocommerce-terms-and-conditions-wrapper p.form-row.validate-required {
+        float: left;
+        margin: 0;
+    }
+
+    .course_detail {
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    #form_subscription .cursist .rowform:first-child .formsubheader {
+        margin-bottom: 5px !important;
+    }
+
+    /*button adjust*/
+    /*.checkout_coupon .button-align-right {*/
+    /*    display: flex;*/
+    /*    justify-content: flex-end;*/
+    /*}*/
+
+    .woocommerce table.cart td.actions .button, .woocommerce-page #content table.cart td.actions .button, .woocommerce-page table.cart td.actions .button {
+        display: inline-block !important;
+        width: 60% !important;
+    }
+
+    /*.woocommerce form.woocommerce-checkout .button-align-center {*/
+    /*    display: flex;*/
+    /*    justify-content: center;*/
+    /*}*/
+    .vc_row-fluid .form-group .hidden {
+        display: none !important;
+    }
+
+
+    .calendar_sect_main .course_detail .course_unavailable_text p {
+        padding: 30px 30px;
+    }
+
+}
+
+.calendar_sect_main .course_detail .course_unavailable_text p
+    /* For course selection datum  */
+    /*.panel-body span.required{*/
+span.required {
+    color: red;
+}
+
+#numrirrjeshtave {
+    border: none;
+    background: none;
+    cursor: inherit;
+    color: inherit;
+    float: right;
+}
+
+.confirmationBtn {
+    float: right;
+    margin-top: 10px;
+}
+
+#add_student {
+    display: none;
+}
+
+@media (max-width: 380px) {
+    .lp_remove_student_col{    
+        padding-right: 0 !important;
+    }
+    a.lp_remove_student, a.lp_remove_student:link {
+        color: #dc3545;
+        font-size: 12px;
+    }
+    a.lp_clear_student_fields, a.lp_clear_student_fields:link {
+        font-size: 12px;
+    }a.lp_clear_student_fields, a.lp_clear_student_fields:link,
+    #clear_student_fields_1,
+    #numrirrjeshtave,
+    a.lp_add_student {
+        cursor: pointer;
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 300px) {
+    .calendar_sect_main .course_detail .course_unavailable_text p {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    a.lp_remove_student, a.lp_remove_student:link {
+        color: #dc3545;
+        /* font-size: 11px; */
+    }
+
+    a.lp_add_student {
+        cursor: pointer;
+        font-size: 11px;
+    }
+}
+
+div#course_sidebar div.course_label.optional_courses strong.product-quantity {
+    font-weight: normal;
+}
+@media (min-width: 1200px) {
+    .smallsacreen-error{
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) {
+    
+    /*stepbar css*/
+    .step-col-2 {
+        right: 20px !important;
+    }
+
+    .step-col-3 {
+        right: 40px !important;
+    }
+
+    #step_bar .stepText2 {
+        right: 20px !important;
+    }
+
+    #step_bar .stepText3 {
+        right: -15px !important;
+    }
+
+    div#course_sidebar div.col-lg-11 hr {
+        /*display: none;*/
+        margin: 10px auto;
+    }
+
+    /*sidebar*/
+    div.course_label {
+        width: 70%;
+    }
+
+    div.data-price-calculate {
+        width: 30%;
+    }
+
+    div.col-md-6.course_label {
+        padding-right: 0;
+    }
+
+    #submit_subscription {
+        padding: 6px 12px;
+        font-size: 14px;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        font-weight: 400;
+        line-height: 1.42857143;
+
+    }
+
+    /* student info form css */
+    div.student_info div.col-sm-12 {
+        padding-right: 0;
+    }
+
+    /*div.student_info div.col-sm-6 {*/
+    /*    padding-right: 0;*/
+    /*    padding-left: 0;*/
+    /*}*/
+}
+
+div.courseFullyBooked {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #f57d30;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+}
+
+div.courseFullyBooked{
+    padding: 0 16px;
+}
+div.courseFullyBooked p{
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 0;
+    text-transform: none !important;
+    padding: 20px;
+    line-height: 33px;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    margin-top: 7%;
+    align-items: center;
+
+}
+.lp_add_student_col{
+    
+    padding-right: 0 !important;
+}
+.lp_remove_student_col,
+.lp_clear_student_field_col{
+    padding-left: 0 !important;
+    text-align: right;
+}
+
+@media screen and (max-width:768px){
+    .mobile-form-group{
+        position: relative;
+    }
+    .mobile-form-group::after{
+        content: "";
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        bottom: -12px;
+        background-color: #ddd;
+    }
+    .vc_column_container {
+        display: flex !important;
+        justify-content: space-between;
+    }
+    .calendar_sect_main .calendar-container .calendar .event-container .close {
+        right: 0%!important;
+    }
+    div.courseFullyBooked{
+        padding: 0px;
+    }
+    .calendar .event-container .event-wrapper {
+        padding: 0 !important;
+    }
+    .rowform .form-group.mobile-form-group{
+        margin-bottom: 30px !important;
+    }
+    /* div.courseFullyBooked p{
+        padding: 10px;
+        font-size: 14px;
+        line-height: 24px;
+    } */
+    
+}
+@media screen and (max-width:500px){
+    #event-detail{
+        display: flex;
+        flex-direction: column;
+    }
+    #event-detail div{
+        width: 100%;
+    }
+    #event-detail #calendar_picker{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #event-detail #course{
+        margin-bottom: 10px;
+    }
+    #courseid{
+        text-align:left!important;
+    }
+    #courseid optgroup option{
+        text-align:left!important;
+        font-size: 12px;
+    }
+    
+}
+@media screen and (max-width:390px){
+    #event-detail #course{
+        font-size: 12px;
+    }
+    div.courseFullyBooked p{
+        padding: 15px;
+        font-size: 17px;
+        line-height: 27px;
+    }
+}
+@media screen and (max-width:322px){
+    #event-detail #course{
+        font-size: 11px;
+    }
+}
+/*.modal{*/
+/*    pointer-events: none;*/
+/*}*/
+.showModel{
+    display: flex !important;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+#modelClose span{
+  line-height: 0.5;  
+  font-size: 36px;
+font-weight: normal;
+}
+#modelClose{
+    background-color: transparent !important;
+}
+.modal-body p{
+    color: #f57d30;
+    font-size: 20px;
+    line-height: 34px;
+    text-align: center;
+}
+body.hidescrool{
+    overflow: hidden !important;
+}
+body.autoscrool{
+    overflow: auto !important;
+}
+#cusistswrapper > .cursist:last-child  .mobile-form-group::after{
+    content: none;
+    
+}
+#cusistswrapper > .cursist:last-child  .mobile-form-group{
+    margin-bottom: 0 !important;
+}
+@media screen and (max-width : 361px) {
+    .panel-default .panel-body,
+    .panel-default .panel-heading{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #optional_course .form-group > div{
+        font-size: 13px;
+    }
+}
+/*.actions >.coupon {*/
+/*    display: flex !important;*/
+/*}*/
+/*.woocommerce-cart .woocommerce .actions #coupon_code{*/
+/*    width: auto !important;*/
+/*}*/
+.woocommerce form .form-row .input-text, .woocommerce-page form .form-row .input-text {
+    padding: 9px;
+}
+
+div#order_review.woocommerce-checkout-review-order form.checkout_coupon.woocommerce-form-coupon {
+    display:none;
+}

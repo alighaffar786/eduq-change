@@ -1,0 +1,93 @@
+.woocommerce-page table.shop_table_responsive thead {
+    display: table-header-group !important;
+}
+
+@media (max-width: 768px) {
+    form .shop_table_responsive tr td::before {
+        content: none !important;
+    }
+
+    .woocommerce-cart .woocommerce table.shop_table_responsive.cart {
+        /*border: none !important;*/
+        padding: 0 !important;
+    }
+
+    .woocommerce-cart .woocommerce table.shop_table {
+        border-width: 1px 1px 0 0;
+    }
+
+    .woocommerce-page table.shop_table_edu_responsive.shop_table_responsive tr {
+        display: table-row !important;
+    }
+
+    .woocommerce table.shop_table_responsive.shop_table_edu_responsive tr, .woocommerce-page table.shop_table_responsive.shop_table_edu_responsive tr {
+        display: table-row;
+    }
+
+    .woocommerce-page table.shop_table_edu_responsive.shop_table_responsive tr td {
+        display: table-cell !important;
+    }
+
+    .woocommerce table.shop_table_responsive.shop_table_edu_responsive tr td, .woocommerce-page table.shop_table_responsive.shop_table_edu_responsive tr td {
+        display: table-cell;
+    }
+
+    .woocommerce-page table.shop_table_edu_responsive.shop_table_responsive tr td.product-name {
+        display: table-cell !important;
+        text-align: left !important;
+        background-color: white;
+    }
+
+    .woocommerce-page table.shop_table_edu_responsive.shop_table_responsive tr td.product-name.service-item strong.product-quantity {
+        font-weight: normal;
+    }
+
+
+    .woocommerce-page table.shop_table_edu_responsive.shop_table_responsive tr td.product-subtotal {
+        background-color: white;
+        width: 104px;
+    }
+
+    .woocommerce-page table.shop_table_edu_responsive.shop_table_responsive tr td.product-remove {
+        background-color: white;
+    }
+
+    .woocommerce-cart .woocommerce table.shop_table td.product-name > a {
+        color: #000000 !important;
+        font-weight: 500 !important;
+    }
+
+    .woocommerce table.shop_table_responsive tr:nth-child(2n) td, .woocommerce-page table.shop_table_responsive tr:nth-child(2n) td {
+        background-color: #FFFFFF !important;
+    }
+
+    .woocommerce table.shop_table td.product-name.service-item {
+        padding-left: 20px;
+        font-size: 14px;
+    }
+    .order-total-mobile td{
+        text-align:right!important;
+    }
+    .order-total-mobile td strong{
+        position: absolute !important;
+        right:38px;
+    }
+    .woocommerce-cart .woocommerce .actions #coupon_code{
+        width: 60% !important;
+    }
+    
+
+}
+@media screen and (max-width: 490px) {
+    .woocommerce-cart .woocommerce .actions #coupon_code{
+        width: 100% !important;
+        margin: 20px 0;
+    }
+    .actions >.coupon {
+        align-items: center;
+        flex-direction: column;
+    }
+    .woocommerce table.cart td.actions .button, .woocommerce-page #content table.cart td.actions .button, .woocommerce-page table.cart td.actions .button {
+        width: 100% !important;
+    }
+}

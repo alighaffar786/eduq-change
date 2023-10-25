@@ -1,0 +1,127 @@
+
+div cart_extra_price_label .col-md-6 course_label {
+    padding-left: 0;
+}
+
+div.row.extra_price_row.optionl_row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+div#course_sidebar strong.product-quantity {
+    padding-left: 3px;
+}
+
+
+/*.course_sidebar {*/
+/*    border: 2px solid #f0f0f0;*/
+/*    background-color: #f8f8f8;*/
+/*    float: left;*/
+/*    width: 100%;*/
+/*    padding: 25px 10px;*/
+/*}*/
+
+@media screen and (min-width: 320px) {
+    #step_bar .stepText3 {
+        right: -8px;
+    }
+
+    .panel.panel-default.calendar-selection div.col-md-6.field_offset_0 {
+        width: 70%;
+        float: left;
+    }
+
+    .panel.panel-default.calendar-selection div.col-md-1.field_offset_0 {
+        width: 20%;
+        float: left;
+    }
+
+}
+
+@media screen and (min-width:421px) and (max-width: 470px) {
+    div.student-row.row .btn.btn-block {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+    div.student-row.row div.btn-row.row div.col-md-3 {
+        float: left;
+    }
+
+    #step_bar .col-xs-3 {
+        font-size: small;
+    }
+
+    #step_bar .stepText3 {
+        text-align: right;
+    }
+
+    #step_bar .stepText4 {
+        text-align: right;
+        right: -30px;
+    }
+}
+
+/* form */
+@media screen and (max-width: 768px) {
+    .row {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .col-sm-6 {
+        padding-right: 5px !important;
+        padding-left: 5px !important;
+    }
+
+    .btn-row {
+        display: flex;
+    }
+
+    .vc_row-fluid {
+        margin-bottom: -4px !important;
+    }
+
+    .col-sm-6:nth-child(2n) {
+        margin-bottom: 7px;
+    }
+
+    .col-sm-6 {
+        margin-bottom: 15px;
+    }
+    .btn-primary-two {
+        margin-top: 15px;
+        padding: 10px 20px !important;
+    }
+    /*#step_bar .stepText1 {*/
+    /*    text-align:left;*/
+    /*    left: -25px;*/
+    /*}*/
+    /*#step_bar .stepText2 {*/
+    /*    text-align: center;*/
+    /*      right: 22px;*/
+    /*  }*/
+    /*#step_bar .stepText3 {*/
+    /*    text-align: left;*/
+    /*    left: -5px;*/
+    /*}*/
+    /*#step_bar .stepText4 {*/
+    /*    text-align: right;*/
+    /*    right: -20px;*/
+    /*}*/
+}
+@media screen and (max-width: 380px) {
+    .col-sm-6:nth-child(2n) {
+        margin-bottom: 3px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .sidebar_btn_row {
+        display: none;
+    }
+}
+
+/* Comments */
+
+
